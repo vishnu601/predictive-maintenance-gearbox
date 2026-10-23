@@ -1,0 +1,78 @@
+# ==============================================================================
+# Predictive Maintenance & Mechanical Condition Monitoring Configuration
+# ==============================================================================
+
+system:
+  app_name: "Gearbox Condition Monitoring Platform"
+  version: "1.0.0"
+  env: "development"
+  log_level: "INFO"
+  seed: 42
+
+dataset:
+  name: "PIEMR-DOE Gearbox Fault Diagnosis Dataset"
+  url: "https://data.openei.org/files/623/gearboxdata.zip"
+  source_organization: "Prestige Institute of Engineering Management and Research (PIEMR) / DOE OpenEI"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  interim_dir: "data/interim"
+  # Sensors available: 4 accelerometer channels in 4 directions
+  channels: [1, 2, 3, 4]
+  selected_channel: 1
+  sampling_rate_hz: 5000  # Default nominal sampling rate
+  # Actual ground truth classes verified in the dataset:
+  supported_classes:
+    - "Healthy"
+    - "BrokenTooth"
+  # Unsupported classes that are tracked as unavailable per non-fabrication rules:
+  unsupported_classes:
+    - "Misalignment"
+    - "Imbalance"
+    - "MechanicalLooseness"
+    - "BearingFault"
+
+signal_processing:
+  window_size: 2048
+  overlap_percent: 50
+  step_size: 1024
+  detrend: true
+  normalize: true
+  min_signal_length: 2048
+  quality_checks:
+    check_flatline: true
+    flatline_threshold_std: 1e-5
+    check_clipping: true
+    clipping_percentile: 99.9
+    check_nans: true
+
+operational_status:
+  states:
+    - "NORMAL"
+    - "WARNING"
+    - "FAULT"
+    - "SENSOR_ERROR"
+    - "INSUFFICIENT_DATA"
+  rules:
+    # Minimum consecutive windows to transition to FAULT (prevents transient false alerts)
+    fault_confirmation_windows: 3
+    # Minimum consecutive windows to recover to NORMAL
+    recovery_confirmation_windows: 5
+    # Anomaly detector threshold multiplier or percentile
+    anomaly_threshold_percentile: 95.0
+    # Classifier confidence threshold to confirm a FAULT
+    fault_confidence_threshold: 0.70
+
+storage:
+  database_path: "data/monitoring.db"
+  max_history_records: 50000
+
+sensor_source:
+  default_mode: "csv_replay"  # csv_replay, serial, or demo
+  serial:
+    port: "/dev/tty.usbserial-0001"
+    baud_rate: 115200
+    timeout_sec: 1.0
+    frame_format: "csv"  # "csv" (timestamp,value) or "json"
+  buffer:
+    max_samples: 100000
+    window_publish_rate_hz: 2.0

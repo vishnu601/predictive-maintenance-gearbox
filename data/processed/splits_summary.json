@@ -1,0 +1,35 @@
+{
+  "total_windows": 1946,
+  "train_windows": 1255,
+  "val_windows": 293,
+  "test_windows": 398,
+  "train_groups": [
+    "brokentooth_load40pct_run",
+    "brokentooth_load50pct_run",
+    "brokentooth_load60pct_run",
+    "brokentooth_load80pct_run",
+    "brokentooth_load90pct_run",
+    "healthy_load0pct_run",
+    "healthy_load10pct_run",
+    "healthy_load20pct_run",
+    "healthy_load30pct_run",
+    "healthy_load40pct_run",
+    "healthy_load60pct_run",
+    "healthy_load80pct_run",
+    "healthy_load90pct_run"
+  ],
+  "val_groups": [
+    "brokentooth_load20pct_run",
+    "brokentooth_load30pct_run",
+    "brokentooth_load70pct_run"
+  ],
+  "test_groups": [
+    "brokentooth_load0pct_run",
+    "brokentooth_load10pct_run",
+    "healthy_load50pct_run",
+    "healthy_load70pct_run"
+  ],
+  "window_size": 2048,
+  "sampling_rate_hz": 5000.0,
+  "channel": 1
+}

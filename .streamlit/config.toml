@@ -1,0 +1,10 @@
+[client]
+showSidebarNavigation = true
+
+[theme]
+base = "dark"
+primaryColor = "#00f0ff"
+backgroundColor = "#0e1117"
+secondaryBackgroundColor = "#181d28"
+textColor = "#e5e7eb"
+font = "sans serif"

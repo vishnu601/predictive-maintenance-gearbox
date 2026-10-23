@@ -1,0 +1,137 @@
+[
+  {
+    "model_name": "Random Forest",
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "Healthy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "BrokenTooth": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        205,
+        0
+      ],
+      [
+        0,
+        193
+      ]
+    ],
+    "normalized_confusion_matrix": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "classes": [
+      "Healthy",
+      "BrokenTooth"
+    ],
+    "inference_latency_ms": 14.0777832781896,
+    "model_size_kb": 122.0966796875
+  },
+  {
+    "model_name": "XGBoost",
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "Healthy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "BrokenTooth": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        205,
+        0
+      ],
+      [
+        0,
+        193
+      ]
+    ],
+    "normalized_confusion_matrix": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "classes": [
+      "Healthy",
+      "BrokenTooth"
+    ],
+    "inference_latency_ms": 0.495046692667529,
+    "model_size_kb": 153.2275390625
+  },
+  {
+    "model_name": "1D CNN",
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "per_class": {
+      "Healthy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "BrokenTooth": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        205,
+        0
+      ],
+      [
+        0,
+        193
+      ]
+    ],
+    "normalized_confusion_matrix": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "classes": [
+      "Healthy",
+      "BrokenTooth"
+    ],
+    "inference_latency_ms": 0.24004742386750877,
+    "model_size_kb": 262.8056640625
+  }
+]

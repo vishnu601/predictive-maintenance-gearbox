@@ -1,0 +1,4 @@
+Model,Accuracy,Balanced Accuracy,Macro F1,Weighted F1,Healthy F1,BrokenTooth F1,Latency (ms),Size (KB)
+Random Forest,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,14.08,122.1
+XGBoost,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.50,153.2
+1D CNN,1.0000,1.0000,1.0000,1.0000,1.0000,1.0000,0.24,262.8

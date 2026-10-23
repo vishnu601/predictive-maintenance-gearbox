@@ -1,0 +1,36 @@
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+
+# Datasets & Large Artifacts
+data/raw/*.zip
+data/raw/gearbox_extracted/
+data/processed/*.csv
+data/processed/*.npy
+data/interim/
+!data/raw/README.md
+!data/processed/README.md
+!data/interim/README.md
+!data/README.md
+
+# Database
+*.db
+*.sqlite3
+
+# Testing & Logs
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
