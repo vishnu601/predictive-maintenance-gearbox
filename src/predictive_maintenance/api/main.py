@@ -158,7 +158,7 @@ if web_dir.exists():
     app.mount("/dashboard", StaticFiles(directory=str(web_dir), html=True), name="dashboard")
     app.mount("/ui", StaticFiles(directory=str(web_dir), html=True), name="ui")
 
-    @app.get("/", include_in_schema=False)
+    @app.api_route("/", methods=["GET", "HEAD"], include_in_schema=False)
     def root():
         return RedirectResponse(url="/dashboard/")
 
